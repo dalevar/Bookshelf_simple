@@ -54,16 +54,6 @@
       <h2>Belum selesai dibaca</h2>
 
       <div id="incompleteBookshelfList" class="book_list">
-        <!--      <article class="book_item">-->
-        <!--        <h3>Book Title</h3>-->
-        <!--        <p>Penulis: John Doe</p>-->
-        <!--        <p>Tahun: 2002</p>-->
-        <!--    -->
-        <!--        <div class="action">-->
-        <!--          <button class="green">Selesai dibaca</button>-->
-        <!--          <button class="red">Hapus buku</button>-->
-        <!--        </div>-->
-        <!--      </article>-->
       </div>
     </section>
 
@@ -71,53 +61,73 @@
       <h2>Selesai dibaca</h2>
 
       <div id="completeBookshelfList" class="book_list">
-        <!--      <article class="book_item">-->
-        <!--        <h3>Book Title</h3>-->
-        <!--        <p>Penulis: John Doe</p>-->
-        <!--        <p>Tahun: 2002</p>-->
-        <!--        -->
-        <!--        <div class="action">-->
-        <!--          <button class="green">Belum selesai di Baca</button>-->
-        <!--          <button class="red">Hapus buku</button>-->
-        <!--        </div>-->
-        <!--      </article>-->
       </div>
     </section>
   </main>
 
   <div id="dialog" class="modal">
     <div class="modal-content">
-      <span class="close-button">&times;</span>
-      <p>Apakah Anda yakin ingin menghapus buku ini?</p>
-      <button id="confirmDeleteButton">Ya</button>
-      <button id="cancelDeleteButton">Tidak</button>
+      <div class="modal-header">
+        <h2>Hapus Buku</h2>
+        <span class="close-button" id="cancelDeleteButton">&times;</span>
+      </div>
+      <div class="modal-body">
+        <p>Apakah Anda yakin ingin menghapus buku ini?</p>
+      </div>
+      <div class="modal-footer">
+        <button id="confirmDeleteButton">Ya</button>
+        <button id="cancelDeleteButton">Tidak</button>
+      </div>
     </div>
   </div>
 
-  <!-- Modal Edit -->
+
   <div id="editDialog" class="modal">
     <div class="modal-content">
-      <span class="close-button">&times;</span>
-      <h2>Edit Buku</h2>
-      <form id="editBook">
-        <div class="input">
-          <label for="editBookTitle">Judul</label>
-          <input id="editBookTitle" type="text" required>
-        </div>
-        <div class="input">
-          <label for="editBookAuthor">Penulis</label>
-          <input id="editBookAuthor" type="text" required>
-        </div>
-        <div class="input">
-          <label for="editBookYear">Tahun</label>
-          <input id="editBookYear" type="number" required>
-        </div>
-        <div class="input_inline">
-          <label for="editBookIsComplete">Selesai dibaca</label>
-          <input id="editBookIsComplete" type="checkbox">
-        </div>
+      <div class="modal-header">
+        <h2>Edit Buku</h2>
+        <span class="close-button" id="editCloseButton">&times;</span>
+      </div>
+      <div class="modal-body">
+        <form id="editBook">
+          <div class="input">
+            <label for="editBookTitle">Judul</label>
+            <input id="editBookTitle" type="text" required>
+          </div>
+          <div class="input">
+            <label for="editBookAuthor">Penulis</label>
+            <input id="editBookAuthor" type="text" required>
+          </div>
+          <div class="input">
+            <label for="editBookYear">Tahun</label>
+            <input id="editBookYear" type="number" required>
+          </div>
+          <div class="input_inline">
+            <label for="editBookIsComplete">Selesai dibaca</label>
+            <input id="editBookIsComplete" type="checkbox">
+          </div>
+      </div>
+      <div class="modal-footer">
         <button id="editSubmit" type="submit">Edit Buku</button>
+        <button id="editCloseButton">Tidak</button>
+      </div>
       </form>
+    </div>
+  </div>
+
+  <!-- Modal Alert Buku Not Found -->
+  <div id="alertDialog" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Peringatan</h2>
+        <span class="close-button" id="closeAlertButton">&times;</span>
+      </div>
+      <div class="modal-body">
+        <p><strong id="alertMessage">Buku tidak ditemukan</strong></p>
+      </div>
+      <div class="modal-footer">
+        <button id="closeAlertButton">Tutup</button>
+      </div>
     </div>
   </div>
 

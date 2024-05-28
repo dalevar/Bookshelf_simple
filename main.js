@@ -237,6 +237,28 @@ function editBook(bookId) {
   }
 }
 
+function openAlertDialog(message) {
+  document.getElementById("alertMessage").innerText = message;
+  const alertModal = document.getElementById("alertDialog");
+  alertModal.style.display = "block";
+}
+
+function closeAlertDialog() {
+  const alertModal = document.getElementById("alertDialog");
+  alertModal.style.display = "none";
+}
+
+document
+  .getElementById("closeAlertButton")
+  .addEventListener("click", closeAlertDialog);
+
+window.addEventListener("click", function (event) {
+  const alertModal = document.getElementById("alertDialog");
+  if (event.target === alertModal) {
+    alertModal.style.display = "none";
+  }
+});
+
 document.addEventListener("DOMContentLoaded", function () {
   document
     .getElementById("editCloseButton")
@@ -304,6 +326,8 @@ document.addEventListener(RENDER_EVENT, function (event) {
       } else {
         uncompletedBookList.append(bookElement);
       }
+    } else {
+      openAlertDialog("Buku tidak ditemukan");
     }
   }
 });
