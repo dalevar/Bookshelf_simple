@@ -348,5 +348,3 @@ document.addEventListener("DOMContentLoaded", function () {
     loadDataFromStorage();
   }
 });
-
-console.log(books);
