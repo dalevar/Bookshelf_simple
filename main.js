@@ -14,7 +14,7 @@ function generateBookObject(id, title, author, year, isComplete) {
     id,
     title,
     author,
-    year,
+    year: parseInt(year),
     isComplete,
   };
 }
@@ -286,7 +286,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (book) {
         book.title = bookTitle;
         book.author = bookAuthor;
-        book.year = bookYear;
+        book.year = parseInt(bookYear);
         book.isComplete = bookIsComplete;
 
         saveData();
@@ -348,3 +348,5 @@ document.addEventListener("DOMContentLoaded", function () {
     loadDataFromStorage();
   }
 });
+
+console.log(books);
